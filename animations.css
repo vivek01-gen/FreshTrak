@@ -1,0 +1,132 @@
+/* ============================================================
+   FreshTrack — Animations & Keyframes
+   animations.css
+   ============================================================ */
+
+/* ── PAGE TRANSITIONS ────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* ── SPLASH ──────────────────────────────────────────────── */
+@keyframes splashFade {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+@keyframes splashBounce {
+  0%   { transform: scale(0.5) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.15) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* ── MODAL ───────────────────────────────────────────────── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── TOAST ───────────────────────────────────────────────── */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── CARD PULSE (expiring soon) ──────────────────────────── */
+@keyframes pulseBorder {
+  0%   { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  70%  { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+.pulse-warn {
+  animation: pulseBorder 2s infinite;
+}
+
+/* ── SHAKE (form error) ──────────────────────────────────── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* ── ROTATE (loading) ────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ── PROGRESS BAR FILL ───────────────────────────────────── */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+.progress-fill {
+  animation: fillBar 0.8s ease forwards;
+}
+
+/* ── FAB ENTRANCE ────────────────────────────────────────── */
+@keyframes fabPop {
+  0%   { transform: scale(0) rotate(-10deg); opacity: 0; }
+  70%  { transform: scale(1.08) rotate(2deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.fab-enter {
+  animation: fabPop 0.4s ease forwards;
+}
+
+/* ── STAGGER CHILDREN ────────────────────────────────────── */
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.10s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger > *:nth-child(4) { animation-delay: 0.20s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger > *:nth-child(6) { animation-delay: 0.30s; }
+.stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger > *:nth-child(8) { animation-delay: 0.40s; }
+
+.stagger > * {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* ── SWIPE TRANSITIONS ───────────────────────────────────── */
+.swipe-transition {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── STATUS BADGE ENTRANCE ───────────────────────────────── */
+@keyframes badgePop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  80%  { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.badge-enter {
+  animation: badgePop 0.3s ease forwards;
+}
+
+/* ── REDUCED MOTION ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

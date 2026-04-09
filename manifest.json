@@ -1,0 +1,49 @@
+{
+  "name": "FreshTrack — Food Expiry Tracker",
+  "short_name": "FreshTrack",
+  "description": "Track food expiry dates, reduce waste, save money. 100% offline.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#22c55e",
+  "orientation": "portrait-primary",
+  "categories": ["food", "productivity", "utilities"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshot-home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Home screen — inventory view"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Food Item",
+      "short_name": "Add Item",
+      "description": "Quickly add a new food item",
+      "url": "./index.html#additem",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
